@@ -61,3 +61,40 @@ This project includes the following Kubernetes manifest files:
 
    ```bash
    minikube start
+   ```
+2. **Apply Kubernetes Resources:**
+Apply all the YAML files in order:
+
+```bash
+    kubectl apply -f mongo-secret.yaml
+    kubectl apply -f mongo-configmap.yaml
+    kubectl apply -f mongo.yaml
+    kubectl apply -f mongo-express.yaml
+   ```
+
+Verify that the pods and services are running:
+
+```bash
+   kubectl get all
+   ```
+
+3. **Access Mongo Express in Browser:**
+ 
+ ```bash
+   minikube service mongo-express-service
+   ```
+4. **Cleanup:**
+
+```bash
+    kubectl delete -f mongo-express.yaml
+    kubectl delete -f mongo.yaml
+    kubectl delete -f mongo-configmap.yaml
+    kubectl delete -f mongo-secret.yaml
+    minikube stop
+   ```
+
+
+
+
+
+
