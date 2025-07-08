@@ -1,0 +1,8 @@
+
+echo -n 'username' | base64
+echo -n 'password' | base64
+
+
+By default, if no specific environment variables are set, the mongo-express web interface uses:
+Username: admin
+Password: pass
